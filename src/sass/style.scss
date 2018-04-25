@@ -1,0 +1,99 @@
+@import "reset.scss"; 
+@import "vendor/prism.scss"; 
+
+$darkblue: #002b36;
+$darkerblue: #00212b;
+$lightgray: #657b83;
+$green: #4e8b00;
+$teal: #2aa198;
+$yellow: #FFC400;
+$white: #fff;
+$black: #000;
+
+html {
+    font-size: 10px;
+}
+
+body {
+    font-family: 'Roboto Mono', monospace;
+    background-color: $darkblue;
+    color: white;
+}
+
+h1, h2 {
+    font-size: 2.4rem;
+    margin: 40px 0;
+}
+
+h1 {
+    font-family: "Roboto Mono",serif;
+    font-size: 10rem;
+    text-transform: uppercase;
+    -webkit-font-smoothing: antialiased;
+    color: $lightgray;
+    text-align: center;
+    font-weight: 300;
+    letter-spacing: -0.5rem;
+}
+
+h2 {
+    text-transform: uppercase;
+    color: $green;
+    position: relative;
+    border-bottom: 2px solid rgba($white,0.2);
+    padding-bottom: 4px;
+
+    &::before {
+        content: "[";
+    }
+    
+    &::after {
+        content: "]";
+    } 
+
+}
+
+
+
+h3 {
+    background: $darkerblue;
+    color: $teal;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin: 0;
+    padding: 14px;
+    border-radius: 6px 6px 0 0;
+    display: inline-block;
+    text-align: left;
+}
+
+pre {
+    background: $white;
+    font-size: 1.4rem;
+    font-weight: 400;
+    padding: 2rem !important;
+    margin: 0 0 20px !important;
+    border-radius: 0 3px 3px;
+    box-shadow: 0 3px 10px rgba($black,0.5);
+}
+
+code[class*="language-"], 
+pre[class*="language-"] {
+    font-family: "Roboto Mono",serif !important;
+}
+
+#index {
+
+    color: #657b83;
+    text-align: center;
+
+    a {
+    
+        color: $yellow;
+        font-size: 1.6rem;
+        
+    }
+
+}
+

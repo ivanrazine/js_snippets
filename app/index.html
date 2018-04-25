@@ -1,97 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <title>JS Snippets App</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:300,400,700" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="prism.css">
-    <style>
-        html {
-            font-size: 10px;
-        }
-
-        body {
-            font-family: 'Roboto Mono', monospace;
-            background-color: #002b36;
-            color: white;
-        }
-
-        h1, h2 {
-            font-size: 2.4rem;
-            margin: 40px 0;
-        }
-
-        h1 {
-            font-family: "Roboto Mono",serif;
-            font-size: 10rem;
-            text-transform: uppercase;
-            -webkit-font-smoothing: antialiased;
-            color: #657b83;
-            text-align: center;
-            font-weight: 300;
-            letter-spacing: -0.5rem;
-        }
-
-        h2 {
-            text-transform: uppercase;
-            color: #4e8b00;
-            position: relative;
-            border-bottom: 2px solid rgba(255,255,255,0.2);
-            padding-bottom: 4px;
-        }
-
-        h2::before {
-            content: "[";
-        }
-
-        h2::after {
-            content: "]";
-        }
-
-        h3 {
-            background: #00212b;
-            color: #2aa198;
-            font-size: 1.8rem;
-            text-transform: uppercase;
-            font-weight: bold;
-            margin: 0;
-            padding: 14px;
-            border-radius: 6px 6px 0 0;
-            display: inline-block;
-            text-align: left;
-        }
-
-        pre {
-            background: white;
-            font-size: 1.4rem;
-            padding: 2rem !important;
-            margin: 0 0 20px !important;
-            border-radius: 0 3px 3px;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.5);
-        }
-
-        code[class*="language-"], 
-        pre[class*="language-"] {
-            font-family: "Roboto Mono",serif !important;
-        }
-
-        #index {
-            color: #657b83;
-            text-align: center;
-        }
-
-        #index a {
-            
-            color: #FFC400;
-            font-size: 1.6rem;
-            
-        }
-
-    </style>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 </head>
 <body>
 
-<div class="wrapper">
+<div id="snippet-app" class="wrapper">
 
     <div class="container">
 
@@ -99,7 +18,7 @@
 
             <div class="col-12">
 
-                    <h1>JavaScript<br> Snippets</h1>
+                    <h1 v-html="title"></h1>
 
                     <div id="index"></div>
 
@@ -110,7 +29,7 @@
 
 <div class="row">
 <div class="col-12">
-<h2 id="loop">Loop</h2>
+<h2 id="loop">forEach</h2>
 </div>
 
 <div class="col-12 col-md-12 col-lg-6">
@@ -132,7 +51,7 @@
 </code></pre>
 </div>
 
-</div><!-- /row -->
+</div>
 
 <div class="row">
 <div class="col-12">
@@ -247,34 +166,10 @@ var firstDiv = document.querySelectorAll(el)[0];</code>
 </div>
 </div>
 <br><br>
-<script src="prism.js"></script>
 
-<script>
 
-    var inx = document.getElementById("index"),
-        sections = document.querySelectorAll("h2");
 
-    [].forEach.call(sections, function (el,i,arr) {
-        
-        var id = el.id,
-            content = el.textContent;
-            sep = " / "
-
-        if (i === arr.length - 1){ 
-            sep = "";
-        }
-
-        inx.innerHTML += "<a href='#" + id +"'>" + content + "</a>" + sep;    
-
-        el.onclick = function() {
-
-            scroll(0,0);
-
-        }
-
-    });    
-
-</script>
+<script src="js/app.js"></script>
 
 </body>
 </html>
