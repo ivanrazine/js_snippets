@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="prism.css">
+    <style>
+        html {
+            font-family: 'Roboto', sans-serif;
+            font-size: 18px;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+
+        h1, h2 {
+            margin: 40px;
+            cursor: pointer;
+        }
+
+        h3 {
+            background: #e8e8e8;
+            margin: 0;
+            padding: 20px;
+        }
+
+        hr {
+            border: 0;
+            border-top: 3px solid rgba(0,0,0,0.15);
+        }
+
+        #index {
+            padding: 0;
+            margin: 20px;
+        }
+
+        #index li {
+            list-style-type: none;
+            margin: 0 0 6px 0;
+        }
+
+        #index li a {
+            font-family: sans-serif;
+            font-weight: bold;
+            font-size: 18px;
+            text-decoration: none;
+            color: #333;
+        }
+
+        #index li a:hover {
+            color: rgb(202, 29, 29);
+            list-style-type: disc;
+        }
+
+        #index li:hover {
+            list-style-type: disc;
+        }
+    </style>
+</head>
+<body>
+
+<div class="wrapper">
+
+    <div class="container">
+
+        <div class="row">
+
+            <div class="col-12">
+
+                    <h1>JavaScript Snippets</h1>
+
+                    <hr/>
+                    
+                    <ul id="index"></ul>
+                    
+                    <hr/>
+
+            </div>
+
+
+        </div>
+
+<div class="row">
+<div class="col-12">
+    <h2 id="loop">Loop</h2>
+</div>
+<div class="col-12 col-md-12 col-lg-6">
+    <h3 class="text-center">jQuery</h3>
+    <pre><code class="language-js">
+        $(el).each(function() {
+            ...
+        });
+    </code></pre>
+</div>
+<div class="col-12 col-md-12 col-lg-6">
+    <h3 class="text-center">Vanilla</h3>
+    <pre><code class="language-js">
+    var blocks = document.querySelectorAll(el);
+
+    [].forEach.call(blocks, function (el) {
+        ...
+    });
+    </code></pre>
+</div>
+</div>
+
+<div class="row">
+<div class="col-12">
+    <h2 id="style">Style</h2>
+</div>
+<div class="col-12 col-md-12 col-lg-6">
+    <h3 class="text-center">jQuery</h3>
+    <pre><code class="language-js">
+    $(el).css("background", "red");
+    </code></pre>
+</div>
+<div class="col-12 col-md-12 col-lg-6">
+    <h3 class="text-center">Vanilla</h3>
+    <pre><code class="language-js">
+    el.style.backgroundColor = "red";
+    </code></pre>
+</div>
+</div>
+
+<div class="row">
+<div class="col-12">
+    <h2 id="class">Class</h2>
+</div>
+<div class="col-12 col-md-12 col-lg-6">
+    <h3 class="text-center">jQuery</h3>
+    <pre><code class="language-js">
+    $(el).addClass("blue");
+    $(el).removeClass("block");
+    $(el).toggleClass("toggled");
+    </code></pre>
+</div>
+<div class="col-12 col-md-12 col-lg-6">
+    <h3 class="text-center">Vanilla</h3>
+    <pre><code class="language-js">
+    el.classList.add("blue");
+    el.classList.remove("block");
+    el.classList.toggle("toggled");
+    </code></pre>
+</div>
+</div>
+
+<div class="row">
+<div class="col-12">
+    <h2 id="attr">Attribute</h2>
+</div>
+<div class="col-12 col-md-12 col-lg-6">
+    <h3 class="text-center">jQuery</h3>
+    <pre><code class="language-js">
+    $(el).attr("title","My fancy block");
+    $(el).data("title","My fancy block");
+    var a = $(el).data("title");
+    </code></pre>
+</div>
+<div class="col-12 col-md-12 col-lg-6">
+    <h3 class="text-center">Vanilla</h3>
+    <pre><code class="language-js">
+    el.setAttribute("title","My fancy block");
+    el.dataset.title = "Another title";
+    var a = el.getAttribute("title");
+    </code></pre>
+</div>
+</div>
+
+<div class="row">
+<div class="col-12">
+    <h2 id="txt-html">Inner text & HTML</h2>
+</div>
+<div class="col-12 col-md-12 col-lg-6">
+    <h3 class="text-center">jQuery</h3>
+    <pre><code class="language-js">
+    $(el).text("Hello World");
+    $(el).html("<span>Hello World</span>");
+    </code></pre>
+</div>
+<div class="col-12 col-md-12 col-lg-6">
+    <h3 class="text-center">Vanilla</h3>
+    <pre><code class="language-js">
+    el.textContent = "Hello World";
+    el.innerHTML = "<span>Hello World</span>";
+    </code></pre>
+</div>
+</div>
+
+<div class="row">
+<div class="col-12">
+    <h2 id="append-prepend">Append & prepend</h2>
+</div>
+<div class="col-12 col-md-12 col-lg-6">
+    <h3 class="text-center">jQuery</h3>
+    <pre><code class="language-js">
+    $(el).append("<span>*-- </span>");
+    $(el).prepend("<span> --*</span>");
+    </code></pre>
+</div>
+<div class="col-12 col-md-12 col-lg-6">
+    <h3 class="text-center">Vanilla</h3>
+    <pre><code class="language-js">
+    el.innerHTML += " --*";
+
+    var oldHTML = el.innerHTML;
+    el.innerHTML = "*-- " + oldHTML;
+    </code></pre>
+</div>
+</div>
+
+<div class="row">
+<div class="col-12">
+    <h2 id="first-last">First & last</h2>
+</div>
+<div class="col-12 col-md-12 col-lg-6">
+    <h3 class="text-center">jQuery</h3>
+    <pre><code class="language-js">
+    $(el).first();
+    $(el).last();
+    </code></pre>
+</div>
+<div class="col-12 col-md-12 col-lg-6">
+    <h3 class="text-center">Vanilla</h3>
+    <pre><code class="language-js">
+    var lastDiv = document.querySelectorAll(el);
+    lastDiv = lastDiv[lastDiv.length- 1];
+
+    var firstDiv = document.querySelectorAll(el)[0];
+    </code></pre>
+</div>
+</div>
+
+
+</div>
+</div>
+
+<script src="prism.js"></script>
+
+<script>
+
+    var inx = document.getElementById("index"),
+        sections = document.querySelectorAll("h2");
+
+    [].forEach.call(sections, function (el) {
+        
+        var id = el.id,
+            content = el.textContent;
+
+        inx.innerHTML += "<li><a href='#" + id +"'>" + content + "</a></li>";    
+
+        el.onclick = function() {
+
+            scroll(0,0);
+
+        }
+
+    });    
+
+</script>
+
+</body>
+</html>
