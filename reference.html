@@ -3,60 +3,90 @@
 <head>
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:300,400,700" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="prism.css">
     <style>
         html {
-            font-family: 'Roboto', sans-serif;
-            font-size: 18px;
+            font-size: 10px;
         }
 
         body {
-            font-family: 'Roboto', sans-serif;
+            font-family: 'Roboto Mono', monospace;
+            background-color: #002b36;
+            color: white;
         }
 
         h1, h2 {
-            margin: 40px;
-            cursor: pointer;
+            font-size: 2.4rem;
+            margin: 40px 0;
+        }
+
+        h1 {
+            font-family: "Roboto Mono",serif;
+            font-size: 10rem;
+            text-transform: uppercase;
+            -webkit-font-smoothing: antialiased;
+            color: #657b83;
+            text-align: center;
+            font-weight: 300;
+            letter-spacing: -0.5rem;
+        }
+
+        h2 {
+            text-transform: uppercase;
+            color: #4e8b00;
+            position: relative;
+            border-bottom: 2px solid rgba(255,255,255,0.2);
+            padding-bottom: 4px;
+        }
+
+        h2::before {
+            content: "[";
+        }
+
+        h2::after {
+            content: "]";
         }
 
         h3 {
-            background: #e8e8e8;
+            background: #00212b;
+            color: #2aa198;
+            font-size: 1.8rem;
+            text-transform: uppercase;
+            font-weight: bold;
             margin: 0;
-            padding: 20px;
+            padding: 14px;
+            border-radius: 6px 6px 0 0;
+            display: inline-block;
+            text-align: left;
         }
 
-        hr {
-            border: 0;
-            border-top: 3px solid rgba(0,0,0,0.15);
+        pre {
+            background: white;
+            font-size: 1.4rem;
+            padding: 2rem !important;
+            margin: 0 0 20px !important;
+            border-radius: 0 3px 3px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.5);
+        }
+
+        code[class*="language-"], 
+        pre[class*="language-"] {
+            font-family: "Roboto Mono",serif !important;
         }
 
         #index {
-            padding: 0;
-            margin: 20px;
+            color: #657b83;
+            text-align: center;
         }
 
-        #index li {
-            list-style-type: none;
-            margin: 0 0 6px 0;
+        #index a {
+            
+            color: #FFC400;
+            font-size: 1.6rem;
+            
         }
 
-        #index li a {
-            font-family: sans-serif;
-            font-weight: bold;
-            font-size: 18px;
-            text-decoration: none;
-            color: #333;
-        }
-
-        #index li a:hover {
-            color: rgb(202, 29, 29);
-            list-style-type: disc;
-        }
-
-        #index li:hover {
-            list-style-type: disc;
-        }
     </style>
 </head>
 <body>
@@ -69,13 +99,9 @@
 
             <div class="col-12">
 
-                    <h1>JavaScript Snippets</h1>
+                    <h1>JavaScript<br> Snippets</h1>
 
-                    <hr/>
-                    
-                    <ul id="index"></ul>
-                    
-                    <hr/>
+                    <div id="index"></div>
 
             </div>
 
@@ -84,158 +110,143 @@
 
 <div class="row">
 <div class="col-12">
-    <h2 id="loop">Loop</h2>
+<h2 id="loop">Loop</h2>
 </div>
-<div class="col-12 col-md-12 col-lg-6">
-    <h3 class="text-center">jQuery</h3>
-    <pre><code class="language-js">
-        $(el).each(function() {
-            ...
-        });
-    </code></pre>
-</div>
-<div class="col-12 col-md-12 col-lg-6">
-    <h3 class="text-center">Vanilla</h3>
-    <pre><code class="language-js">
-    var blocks = document.querySelectorAll(el);
 
-    [].forEach.call(blocks, function (el) {
-        ...
-    });
-    </code></pre>
+<div class="col-12 col-md-12 col-lg-6">
+<h3 class="">jQuery</h3>
+<pre>
+<code class="language-js">$(el).each(function() {
+...
+});
+</code></pre>
+</div>
+
+<div class="col-12 col-md-12 col-lg-6">
+<h3 class="">Javascript</h3>
+<pre><code class="language-js">var blocks = document.querySelectorAll(el);
+
+[].forEach.call(blocks, function (el) {
+...
+});
+</code></pre>
+</div>
+
+</div><!-- /row -->
+
+<div class="row">
+<div class="col-12">
+<h2 id="style">Style</h2>
+</div>
+<div class="col-12 col-md-12 col-lg-6">
+<h3 class="">jQuery</h3>
+<pre><code class="language-js">$(el).css("background", "red");</code></pre>
+</div>
+<div class="col-12 col-md-12 col-lg-6">
+<h3 class="">Javascript</h3>
+<pre><code class="language-js">el.style.backgroundColor = "red";</code></pre>
 </div>
 </div>
 
 <div class="row">
 <div class="col-12">
-    <h2 id="style">Style</h2>
+<h2 id="class">Class</h2>
 </div>
 <div class="col-12 col-md-12 col-lg-6">
-    <h3 class="text-center">jQuery</h3>
-    <pre><code class="language-js">
-    $(el).css("background", "red");
-    </code></pre>
+<h3 class="">jQuery</h3>
+<pre>
+<code class="language-js">$(el).addClass("blue");
+$(el).removeClass("block");
+$(el).toggleClass("toggled");</code>
+</pre>
 </div>
 <div class="col-12 col-md-12 col-lg-6">
-    <h3 class="text-center">Vanilla</h3>
-    <pre><code class="language-js">
-    el.style.backgroundColor = "red";
-    </code></pre>
+<h3 class="">Javascript</h3>
+<pre><code class="language-js">el.classList.add("blue");
+el.classList.remove("block");
+el.classList.toggle("toggled");</code></pre>
 </div>
 </div>
 
 <div class="row">
 <div class="col-12">
-    <h2 id="class">Class</h2>
+<h2 id="attr">Attribute</h2>
 </div>
 <div class="col-12 col-md-12 col-lg-6">
-    <h3 class="text-center">jQuery</h3>
-    <pre><code class="language-js">
-    $(el).addClass("blue");
-    $(el).removeClass("block");
-    $(el).toggleClass("toggled");
-    </code></pre>
+<h3 class="">jQuery</h3>
+<pre><code class="language-js">$(el).attr("title","My fancy block");
+$(el).data("title","My fancy block");
+var a = $(el).data("title");
+</code></pre>
 </div>
 <div class="col-12 col-md-12 col-lg-6">
-    <h3 class="text-center">Vanilla</h3>
-    <pre><code class="language-js">
-    el.classList.add("blue");
-    el.classList.remove("block");
-    el.classList.toggle("toggled");
-    </code></pre>
+<h3 class="">Javascript</h3>
+<pre><code class="language-js">el.setAttribute("title","My fancy block");
+el.dataset.title = "Another title";
+var a = el.getAttribute("title");</code></pre>
 </div>
 </div>
 
 <div class="row">
 <div class="col-12">
-    <h2 id="attr">Attribute</h2>
+<h2 id="txt-html">Inner text & HTML</h2>
 </div>
 <div class="col-12 col-md-12 col-lg-6">
-    <h3 class="text-center">jQuery</h3>
-    <pre><code class="language-js">
-    $(el).attr("title","My fancy block");
-    $(el).data("title","My fancy block");
-    var a = $(el).data("title");
-    </code></pre>
+<h3 class="">jQuery</h3>
+<pre><code class="language-js">$(el).text("Hello World");
+$(el).html("<span>Hello World</span>");</code></pre>
 </div>
 <div class="col-12 col-md-12 col-lg-6">
-    <h3 class="text-center">Vanilla</h3>
-    <pre><code class="language-js">
-    el.setAttribute("title","My fancy block");
-    el.dataset.title = "Another title";
-    var a = el.getAttribute("title");
-    </code></pre>
+<h3 class="">Javascript</h3>
+<pre><code class="language-js">el.textContent = "Hello World";
+el.innerHTML = "<span>Hello World</span>";
+</code></pre>
 </div>
 </div>
 
 <div class="row">
 <div class="col-12">
-    <h2 id="txt-html">Inner text & HTML</h2>
+<h2 id="append-prepend">Append & prepend</h2>
 </div>
 <div class="col-12 col-md-12 col-lg-6">
-    <h3 class="text-center">jQuery</h3>
-    <pre><code class="language-js">
-    $(el).text("Hello World");
-    $(el).html("<span>Hello World</span>");
-    </code></pre>
+<h3 class="">jQuery</h3>
+<pre><code class="language-js">$(el).append("<span>*-- </span>");
+$(el).prepend("<span> --*</span>");
+</code></pre>
 </div>
 <div class="col-12 col-md-12 col-lg-6">
-    <h3 class="text-center">Vanilla</h3>
-    <pre><code class="language-js">
-    el.textContent = "Hello World";
-    el.innerHTML = "<span>Hello World</span>";
-    </code></pre>
+<h3 class="">Javascript</h3>
+<pre><code class="language-js">el.innerHTML += " --*";
+
+var oldHTML = el.innerHTML;
+el.innerHTML = "*-- " + oldHTML;</code></pre>
 </div>
 </div>
 
 <div class="row">
 <div class="col-12">
-    <h2 id="append-prepend">Append & prepend</h2>
+<h2 id="first-last">First & last</h2>
 </div>
 <div class="col-12 col-md-12 col-lg-6">
-    <h3 class="text-center">jQuery</h3>
-    <pre><code class="language-js">
-    $(el).append("<span>*-- </span>");
-    $(el).prepend("<span> --*</span>");
-    </code></pre>
+<h3 class="">jQuery</h3>
+<pre><code class="language-js">$(el).first();
+$(el).last();
+</code></pre>
 </div>
 <div class="col-12 col-md-12 col-lg-6">
-    <h3 class="text-center">Vanilla</h3>
-    <pre><code class="language-js">
-    el.innerHTML += " --*";
-
-    var oldHTML = el.innerHTML;
-    el.innerHTML = "*-- " + oldHTML;
-    </code></pre>
-</div>
-</div>
-
-<div class="row">
-<div class="col-12">
-    <h2 id="first-last">First & last</h2>
-</div>
-<div class="col-12 col-md-12 col-lg-6">
-    <h3 class="text-center">jQuery</h3>
-    <pre><code class="language-js">
-    $(el).first();
-    $(el).last();
-    </code></pre>
-</div>
-<div class="col-12 col-md-12 col-lg-6">
-    <h3 class="text-center">Vanilla</h3>
-    <pre><code class="language-js">
-    var lastDiv = document.querySelectorAll(el);
-    lastDiv = lastDiv[lastDiv.length- 1];
-
-    var firstDiv = document.querySelectorAll(el)[0];
-    </code></pre>
+<h3 class="">Javascript</h3>
+<pre>
+<code class="language-js">var lastDiv = document.querySelectorAll(el);
+lastDiv = lastDiv[lastDiv.length- 1];
+var firstDiv = document.querySelectorAll(el)[0];</code>
+</pre>
 </div>
 </div>
 
 
 </div>
 </div>
-
+<br><br>
 <script src="prism.js"></script>
 
 <script>
@@ -243,12 +254,17 @@
     var inx = document.getElementById("index"),
         sections = document.querySelectorAll("h2");
 
-    [].forEach.call(sections, function (el) {
+    [].forEach.call(sections, function (el,i,arr) {
         
         var id = el.id,
             content = el.textContent;
+            sep = " / "
 
-        inx.innerHTML += "<li><a href='#" + id +"'>" + content + "</a></li>";    
+        if (i === arr.length - 1){ 
+            sep = "";
+        }
+
+        inx.innerHTML += "<a href='#" + id +"'>" + content + "</a>" + sep;    
 
         el.onclick = function() {
 
